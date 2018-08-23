@@ -1,0 +1,142 @@
+---
+title: Nameservers for the Address and Routing Parameter Area ("arpa") Domain
+abbrev: Nameservers for the .arpa Domain
+docname: draft-iana-arpa-authorities
+
+stand_alone: true
+
+ipr: trust200902
+kw: Internet-Draft
+cat: bcp
+
+pi:
+  toc: yes
+  tocdepth: 4
+  sortrefs: yes
+  symrefs: yes
+  
+author:
+  -
+    ins: K. Davies
+    name: Kim Davies
+    org: Internet Assigned Numbers Authority
+    abbrev: IANA
+    street:
+        - PTI/ICANN
+        - 12025 Waterfront Drive
+    city: Los Angeles
+    code: 90094
+    country: United States of America
+    email: kim.davies@iana.org
+    
+normative:
+  RFC3172:
+informative:
+  RFC5855:
+
+--- abstract
+
+This document updates the practices associated with nameservers that serve
+the "arpa" DNS zone. In particular, it describes revisions to operational
+practices to separate function of the zone from its historical operation
+alongside the DNS root zone.
+
+--- middle
+
+# Introduction
+
+The "arpa" top-level domain {{RFC3172}} is specially designated as
+an "infrastucture domain" to support techniques defined by Internet
+standards. Applications of the domain include various types of mappings,
+such as E.164 numbers to URIs, and IP addresses to domain names; as well
+as for non-unique use in residential home networks.
+
+Historically, the arpa top-level domain has been hosted on a majority
+of the root name servers. [Provide back history as to how this came to
+be.] {{RFC3172}} envisages the arpa domain to be "sufficiently critical
+that the operational requirements for the root servers apply to the
+operational requirements of the "arpa" servers". To date, this has been
+implemented by serving the arpa domain directly on the root server
+infrastructure.
+
+This commingling of purpose has not been without complication.
+Activities that pertain to management of the root zone and the .ARPA
+zone have, as a consequence, had dependencies upon one another.
+
+Solutions to certain standardization efforts in the IETF may have been
+addressed by inserting new RR-types in the "arpa" zone that had been
+previously unused. The highly conservative approach that is applied to
+providing root zone operations is resistant to such novel applications
+due to the potential for unintended consequences for the root namespace.
+
+This document separates the provision of authoritative service for
+the root zone and the .ARPA zone, allowing for greater separation
+of concerns and thus more tailored operations based on the unique
+requirements of each service. Such a separation resolves challenges
+that has impacted root zone operations that necessitated coordinated
+edits between the management of the root zone and the .ARPA zone. This
+dependency has unduly complicated the management systems and processes
+for the root zone.
+
+# Dedicated nameservers
+
+The first phase of separation of service intends to identify a new
+naming scheme for the "arpa" authoritative nameservers. Removing the
+dependency on the "root-servers.net" zone which is used for the root
+zone authorities with eliminate a logical dependency that the the "arpa"
+zone has that necessitates the coordinated editing of the arpa zone and
+the root zone.
+
+Consistent with the use of the arpa namespace itself to support other
+delegations in the arpa zone ({{RFC5855}}), this document specifies
+a new namespace of "ns.arpa" to be used for this purpose, with the
+nameserver set to be labelled as follows:
+
+~~~~~
+   a.ns.arpa
+   b.ns.arpa
+   c.ns.arpa
+   ...
+~~~~~
+
+In the initial phase of this transition, these hosts shall map to the
+same IP addresses that provide service under the respective hostnames
+within root-servers.net. At the request of individual root server
+operators, the IP addresses may be pointed to alternative IP addresses
+that is managed to the same rigour as their root service.
+
+# Administration of infrastructure
+
+Contingent upon migrating the "arpa" zone to use nameservers nominated
+in NS records that are not shared with the root zone, name service
+may subsequently be altered such that it no longer directly aligns to
+a subset of root server instances. As part of the joint management
+of the "arpa" zone by the IAB and the IANA, the requirements of the
+"arpa" zone may vary over time as part of a routine re-assessment of
+requirements. This is part of the normal management responsibilities for
+the zone, and may include selection of different nameserver operators
+and reconfiguration of the NS set.
+
+# IANA Considerations
+
+The IANA shall coordinate the creation of a new "ns.arpa" zone and
+populate it with address records that reflect the IP addresses of the
+contemporary root servers documented within "root-servers.net" as its
+initial state. [Nameservers for ns.arpa shall be the standard IANA
+infrastructure servers i.e. *.iana-servers.net? Or add to the same
+*.ns.arpa set?]
+
+The IANA shall migrate the 12 NS records for the "arpa" zone to point to
+their respective new entries in the "ns.arpa" zone. 
+
+Subsequently, the IANA may make changes to the NS set based on operational
+revisions as coordinated with the IAB.
+
+--- back
+
+# Acknowledgments
+{:numbered="false"}
+
+Thank you Michelle Cotton and [future collaborators!]
+
+

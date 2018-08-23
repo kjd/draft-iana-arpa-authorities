@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kramdown-rfc2629 draft-iana-arpa-authorities.mkd > draft-iana-arpa-authorities.xml
+xml2rfc draft-iana-arpa-authorities.xml
