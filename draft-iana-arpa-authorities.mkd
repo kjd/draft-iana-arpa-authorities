@@ -45,7 +45,7 @@ informative:
 --- abstract
 
 This document describes revisions to operational practices to separate
-function of the "arpa" top-level domain zone from its historical
+function of the "arpa" top-level domain in the DNS from its historical
 operation alongside the DNS root zone.
 
 --- middle
@@ -57,13 +57,13 @@ the "arpa" top-level domain zone from that of the root zone, allowing
 for greater separation of concerns and thus more tailored operations
 based on the unique requirements of each service.
 
-The arpa top-level domain {{RFC3172}} is specially designated as
+The arpa top-level domain {{RFC3172}} is designated as
 an "infrastructure domain" to support techniques defined by Internet
 standards. Applications of the domain include various types of mappings,
 such as E.164 numbers to URIs, and IP addresses to domain names; as well
 as for non-unique use in residential home networks.
 
-Historically, the arpa top-level domain has been hosted on a majority
+Historically, the arpa zone has been hosted on almost all
 of the root name servers. {{RFC3172}} envisages the arpa domain to be
 "sufficiently critical that the operational requirements for the root
 servers apply to the operational requirements of the "arpa" servers".
@@ -76,8 +76,8 @@ content and their infrastructure. For example, some proposals under
 consideration in the IETF that involving the arpa zone have been discarded
 due to the risk of conflict with root operations.
 
-A separation also resolves operational impacts of synchronizing edits
-between the management of the root zone and the "arpa" zone. This
+The proposed separation also resolves operational impacts of synchronizing edits
+between the management of the root zone and the "arpa" zone. The current
 dependency has unduly complicated the management systems and processes
 for the root zone.
 
@@ -86,31 +86,27 @@ for the root zone.
 The arpa top-level domain continues to play a role in critical Internet
 operations, and this change does not propose weakening operational
 requirements described in {{RFC3172}} for the domain. Future operational
-requirements for arpa shall consider root server baseline requirements, such
+requirements for arpa shall consider strong baseline requirements, such
 as those documented in {{RFC7720}}.
 
 # Transition Process
 
-To distinguish the operation of the arpa top-level domain zone from that
+To distinguish the operation of the arpa zone from that
 of the root zone, the process would involve initially serving "arpa" from
-the same hosts (i.e. the root servers), using new hostnames dedicated to
+the same hosts (i.e. the root servers), but using new hostnames dedicated to
 their role as arpa authorities.
 
-Once completed, subsequent transitional phases could include new hosts
-replacing or augmenting the existing root server hosts, and separation
+Once completed, subsequent transitional phases would include using new hosts
+to replace or augment the existing root server hosts, and separation
 of the editing and distribution of the arpa zone from necessarily
 being connected to the root zone.
 
-Full compartmentalization of arpa operations from root operations would
-ultimately require different hosts to be serving the root zone, and
-separation of the zone editing processes.
-
-## Dedicated nameservers
+## Dedicated nameserver hostnames
 
 The first phase of separation of service intends to identify a new
 naming scheme for the "arpa" authoritative nameservers. Removing the
-dependency on the "root-servers.net" zone which is used for the root
-zone authorities will eliminate a logical dependency that requires the
+dependency on the "root-servers.net" zone (which is currently used for the root
+zone authorities) will eliminate a logical dependency that requires the
 coordinated editing of the arpa zone and the root zone.
 
 Consistent with the use of the arpa namespace itself to host name
@@ -126,17 +122,15 @@ purpose, with the nameserver set to be labelled as follows:
 ~~~~~
 
 This component of this transition does not require the underlying hosts
-that provide arpa name service, the root servers, to be altered. The new
-hostnames will initially map to the same IP addresses that provide service
-under the respective hostnames within root-servers.net. At the request of
-individual name server operators, the IP addresses may be pointed to
-alternative IP addresses that is managed to the same rigour as their root service.
+that provide arpa name service (that is, the root servers) to be altered. The 
+arpa zone will initially map the new hostnames to the same IP addresses that
+already provide service under the respective hostnames within root-servers.net.
 
-## Administration of infrastructure
+## Separation of infrastructure
 
 Contingent upon migrating the arpa zone to use nameservers nominated
 in NS records that are not shared with the root zone, name service
-may subsequently be evolved such that it no longer directly aligns to
+is expected to evolve such that it no longer directly aligns to
 a subset of root server instances. Future novel applications for the
 arpa zone may be pre-conditioned on ensuring there is no shared infrastructure
 between the root servers and the arpa servers.
@@ -154,6 +148,30 @@ the arpa infrastructure from the root server infrastructure,
 publication of the arpa zone no longer necessarily needs to be
 linked or inter-related to the root zone publication mechanisms.
 
+## Conclusion of process
+
+Full compartmentalization of arpa operations from root operations would
+minimally require the following to be satisfied:
+
+* The arpa zone no longer shares any hostnames in its NS-set with the root
+  zone;
+  
+* The hosts that provide authoritative name service are not the same hosts
+  as the root servers, and are sufficiently separately provisioned such
+  that any unique arpa zone requirements can be deployed without affecting
+  how root zone service is provided;
+  
+* The editorial and publication process for the arpa zone has any common
+  dependencies with the root zone process removed, so that the arpa zone 
+  can be managed, edited and provisioned wholly independently of the
+  root zone.
+  
+Such compartmentalization is ultimately sought to allow for novel uses of
+the arpa zone without the risk of inadvertantly impacting root zone and root
+server operations. It is recognized that achieving this state requires a
+deliberative process involving significant coordination to ensure impacts
+are minimized.
+
 # IANA Considerations
 
 The IANA shall coordinate the creation of a new "ns.arpa" zone and
@@ -164,11 +182,12 @@ initial state.
 The IANA will initially migrate the 12 NS records for the arpa zone
 to point to their respective new entries in the "ns.arpa" zone.
 
-Subsequently, IANA will consult and coordinate on activity to reduce or
-eliminate reliance upon root zone and root server infrastructure for
-serving the arpa zone. Such changes will be performed in compliance
-with {{RFC3172}} and shall be conducted with all due care
-and deliberation to mitigate potential impacts on critical infrastructure.
+Subsequently, IANA will consult and coordinate with all relevant
+parties on activity to reduce or eliminate reliance upon root zone
+and root server infrastructure for serving the arpa zone. Such
+changes will be performed in compliance with {{RFC3172}} and shall
+be conducted with all due care and deliberation to mitigate potential
+impacts on critical infrastructure.
 
 --- back
 
@@ -181,6 +200,10 @@ and deliberation to mitigate potential impacts on critical infrastructure.
 * A preference has been expressed for non-.arpa hostnames. Is it better that the
   nameserver hostnames are in-bailiwick in .arpa or does that provide no
   benefit?
+  
+* Should the name servers stick to the same letter-nomenclature as the root
+  zone? Some operators have expressed a strong desire to move away
+  from the letters for the root zone.
   
 * Should the hostname change be staggered or can it be done in one
   action?
