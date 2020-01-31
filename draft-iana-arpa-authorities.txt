@@ -172,12 +172,12 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
 3.2.  Separation of infrastructure
 
-   Contingent upon migrating the arpa zone to use nameservers nominated
-   in NS records that are not shared with the root zone, name service is
-   expected to evolve such that it no longer directly aligns to a subset
-   of root server instances.  Future novel applications for the arpa
-   zone may be pre-conditioned on ensuring there is no shared
-   infrastructure between the root servers and the arpa servers.
+   After initially migrating the arpa zone to use hostnames that are not
+   shared with the root zone, the underlying name service is expected to
+   evolve such that it no longer directly aligns to a subset of root
+   server instances.  Future novel applications for the arpa zone may be
+   pre-conditioned on ensuring there is no shared infrastructure between
+   the root servers and the arpa servers.
 
    Any subequent changes to the parties providing name service for the
    zone is considered a normal management responsibility associated with
@@ -195,15 +195,16 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
 3.4.  Conclusion of process
 
    Full compartmentalization of arpa operations from root operations
-   would minimally require the following to be satisfied:
+   minimally requires the following to be satisfied:
 
    o  The arpa zone no longer shares any hostnames in its NS-set with
       the root zone;
 
    o  The hosts that provide authoritative name service are not the same
-      hosts as the root servers, and are sufficiently separately
-      provisioned such that any unique arpa zone requirements can be
-      deployed without affecting how root zone service is provided;
+      hosts as the root servers, do not share any IPv4 or IPv6 addresses
+      with the root servers, and are sufficiently separately provisioned
+      such that any unique arpa zone requirements can be deployed
+      without affecting how root zone service is provided;
 
    o  The editorial and publication process for the arpa zone has any
       common dependencies with the root zone process removed, so that
@@ -215,7 +216,6 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
    root zone and root server operations.  It is recognized that
    achieving this state requires a deliberative process involving
    significant coordination to ensure impacts are minimized.
-
 
 
 
@@ -282,17 +282,17 @@ Davies & Arkko           Expires August 3, 2020                 [Page 5]
 Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
 
-   o  Should the name servers stick to the same letter-nomenclature as
-      the root zone?  Some operators have expressed a strong desire to
-      move away from the letters for the root zone.
+   o  Should the name servers stick to the same letter-based
+      nomenclature as the root zone?  Some operators have expressed a
+      strong desire to move away from the letters for the root zone.
 
    o  Should the hostname change be staggered or can it be done in one
       action?
 
 Acknowledgments
 
-   Thank you Michelle Cotton, Ted Hardie, Duane Wessels and Suzanne
-   Woolf for initial feedback.
+   Thank you Michelle Cotton, Ted Hardie, Paul Hoffman, Duane Wessels
+   and Suzanne Woolf for initial feedback.
 
 Authors' Addresses
 

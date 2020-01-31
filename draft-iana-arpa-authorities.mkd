@@ -128,12 +128,11 @@ already provide service under the respective hostnames within root-servers.net.
 
 ## Separation of infrastructure
 
-Contingent upon migrating the arpa zone to use nameservers nominated
-in NS records that are not shared with the root zone, name service
-is expected to evolve such that it no longer directly aligns to
-a subset of root server instances. Future novel applications for the
-arpa zone may be pre-conditioned on ensuring there is no shared infrastructure
-between the root servers and the arpa servers.
+After initially migrating the arpa zone to use hostnames that are not shared
+with the root zone, the underlying name service is expected to evolve such that
+it no longer directly aligns to a subset of root server instances. Future novel
+applications for the arpa zone may be pre-conditioned on ensuring there is no
+shared infrastructure between the root servers and the arpa servers.
 
 Any subequent changes to the parties providing name service
 for the zone is considered a normal management responsibility associated
@@ -150,14 +149,15 @@ linked or inter-related to the root zone publication mechanisms.
 
 ## Conclusion of process
 
-Full compartmentalization of arpa operations from root operations would
-minimally require the following to be satisfied:
+Full compartmentalization of arpa operations from root operations
+minimally requires the following to be satisfied:
 
 * The arpa zone no longer shares any hostnames in its NS-set with the root
   zone;
   
 * The hosts that provide authoritative name service are not the same hosts
-  as the root servers, and are sufficiently separately provisioned such
+  as the root servers, do not share any IPv4 or IPv6 addresses with the
+  root servers, and are sufficiently separately provisioned such
   that any unique arpa zone requirements can be deployed without affecting
   how root zone service is provided;
   
@@ -201,8 +201,8 @@ impacts on critical infrastructure.
   nameserver hostnames are in-bailiwick in .arpa or does that provide no
   benefit?
   
-* Should the name servers stick to the same letter-nomenclature as the root
-  zone? Some operators have expressed a strong desire to move away
+* Should the name servers stick to the same letter-based nomenclature as
+  the root zone? Some operators have expressed a strong desire to move away
   from the letters for the root zone.
   
 * Should the hostname change be staggered or can it be done in one
@@ -211,7 +211,7 @@ impacts on critical infrastructure.
 # Acknowledgments
 {:numbered="false"}
 
-Thank you Michelle Cotton, Ted Hardie, Duane Wessels and Suzanne Woolf for
-initial feedback.
+Thank you Michelle Cotton, Ted Hardie, Paul Hoffman, Duane Wessels and
+Suzanne Woolf for initial feedback.
 
 
