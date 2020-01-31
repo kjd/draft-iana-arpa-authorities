@@ -10,7 +10,7 @@
 <?rfc sortrefs="yes"?>
 <?rfc symrefs="yes"?>
 
-<rfc ipr="trust200902" docName="draft-iana-arpa-authorities" category="bcp">
+<rfc ipr="trust200902" docName="draft-iana-arpa-authorities-99" category="bcp">
 
   <front>
     <title abbrev="Nameservers for the .arpa Domain">Nameservers for the Address and Routing Parameter Area ("arpa") Domain</title>
@@ -27,8 +27,13 @@
         <email>kim.davies@iana.org</email>
       </address>
     </author>
+    <author initials="J." surname="Arkko" fullname="Jari Arkko">
+      <organization abbrev="IAB">Internet Architecture Board</organization>
+      <address>
+      </address>
+    </author>
 
-    <date year="2019" month="November" day="16"/>
+    <date year="2020" month="January" day="31"/>
 
     
     
@@ -37,10 +42,9 @@
     <abstract>
 
 
-<t>This document updates the practices associated with nameservers that serve
-the “arpa” DNS zone. In particular, it describes revisions to operational
-practices to separate function of the zone from its historical operation
-alongside the DNS root zone.</t>
+<t>This document describes revisions to operational practices to separate
+function of the “arpa” top-level domain zone from its historical
+operation alongside the DNS root zone.</t>
 
 
 
@@ -54,7 +58,12 @@ alongside the DNS root zone.</t>
 
 <section anchor="introduction" title="Introduction">
 
-<t>The “arpa” top-level domain <xref target="RFC3172"/> is specially designated as
+<t>This document separates the provision of authoritative service for
+the “arpa” top-level domain zone from that of the root zone, allowing
+for greater separation of concerns and thus more tailored operations
+based on the unique requirements of each service.</t>
+
+<t>The arpa top-level domain <xref target="RFC3172"/> is specially designated as
 an “infrastructure domain” to support techniques defined by Internet
 standards. Applications of the domain include various types of mappings,
 such as E.164 numbers to URIs, and IP addresses to domain names; as well
@@ -65,49 +74,53 @@ of the root name servers. <xref target="RFC3172"/> envisages the arpa domain to 
 “sufficiently critical that the operational requirements for the root
 servers apply to the operational requirements of the “arpa” servers”.
 To date, this has been implemented by serving the arpa domain directly
-on the root server infrastructure.</t>
+on a subset of the root server infrastructure.</t>
 
-<t>This commingling of operations has not been without complication.
-Activities that pertain to management of both the content and the
-infrastructure of the root zone and the “arpa” zone have, as a
-consequence, had dependencies upon one another.</t>
+<t>This commingling of operations has caused complications. The resulting
+co-dependency of these two zones have entwined management of both their
+content and their infrastructure. For example, some proposals under
+consideration in the IETF that involving the arpa zone have been discarded
+due to the risk of conflict with root operations.</t>
 
-<t>Solutions to certain standardization efforts in the IETF may have been
-addressed by inserting new resource record types in the “arpa” zone
-that had been previously unused. The highly conservative approach 
-used in operating the root zone is resistant to such novel applications
-due to the potential for unintended consequences for the root namespace.</t>
-
-<t>This document separates the provision of authoritative service for
-the root zone and the “arpa” zone, allowing for greater separation
-of concerns and thus more tailored operations based on the unique
-requirements of each service. Such a separation resolves challenges
-that has impacted operations that necessitated coordinated
-edits between the management of the root zone and the “arpa” zone. This
+<t>A separation also resolves operational impacts of synchronizing edits
+between the management of the root zone and the “arpa” zone. This
 dependency has unduly complicated the management systems and processes
 for the root zone.</t>
 
 </section>
 <section anchor="requirements-for-the-arpa-zone" title="Requirements for the “arpa” zone">
 
-<t>[TBD]</t>
+<t>The arpa top-level domain continues to play a role in critical Internet
+operations, and this change does not propose weakening operational
+requirements described in <xref target="RFC3172"/> for the domain. Future operational
+requirements for arpa shall consider root server baseline requirements, such
+as those documented in <xref target="RFC7720"/>.</t>
 
 </section>
 <section anchor="transition-process" title="Transition Process">
+
+<t>The distinguish the operation of the arpa top-level domain zone from that
+of the root zone, the process would involve initially serving “arpa” from
+the same hosts (i.e. the root servers), using new hostnames dedicated to
+their role as arpa authorities.</t>
+
+<t>Once completed, subsequent phases could include new hosts replacing or
+augmenting the existing root server hosts, and separation of the editing and
+distribution of the arpa zone from necessarily being connected to the
+root zone.</t>
 
 <section anchor="dedicated-nameservers" title="Dedicated nameservers">
 
 <t>The first phase of separation of service intends to identify a new
 naming scheme for the “arpa” authoritative nameservers. Removing the
 dependency on the “root-servers.net” zone which is used for the root
-zone authorities with eliminate a logical dependency that the the “arpa”
-zone has that necessitates the coordinated editing of the arpa zone and
-the root zone.</t>
+zone authorities will eliminate a logical dependency that requires the
+coordinated editing of the arpa zone and the root zone.</t>
 
-<t>Consistent with the use of the arpa namespace itself to support other
-delegations in the arpa zone (<xref target="RFC5855"/>), this document specifies
-a new namespace of “ns.arpa” to be used for this purpose, with the
-nameserver set to be labelled as follows:</t>
+<t>Consistent with the use of the arpa namespace itself to host name
+servers for other delegations in the arpa zone (<xref target="RFC5855"/>), this
+document specifies a new namespace of “ns.arpa” to be used for this
+purpose, with the nameserver set to be labelled as follows:</t>
 
 <figure><artwork><![CDATA[
    a.ns.arpa
@@ -117,33 +130,34 @@ nameserver set to be labelled as follows:</t>
 ]]></artwork></figure>
 
 <t>This component of this transition does not require the underlying hosts
-that provide “arpa” name servers to be altered. Therefore the new
-hostnames may map to the same IP addresses that provide service under the
-respective hostnames within root-servers.net. At the request of individual
-name server operators, the IP addresses may be pointed to alternative
-IP addresses that is managed to the same rigour as their root service.</t>
+that provide arpa name service, the root servers, to be altered. The new
+hostnames will initially map to the same IP addresses that provide service
+under the respective hostnames within root-servers.net. At the request of
+individual name server operators, the IP addresses may be pointed to
+alternative IP addresses that is managed to the same rigour as their root service.</t>
 
 </section>
 <section anchor="administration-of-infrastructure" title="Administration of infrastructure">
 
-<t>Contingent upon migrating the “arpa” zone to use nameservers nominated
+<t>Contingent upon migrating the arpa zone to use nameservers nominated
 in NS records that are not shared with the root zone, name service
-may subsequently be altered such that it no longer directly aligns to
-a subset of root server instances. As part of the joint management
-of the “arpa” zone by the IAB and the IANA, the requirements of the
-“arpa” zone may vary over time as part of a routine re-assessment of
-requirements. This is part of the normal management responsibilities for
-the zone, and may include selection of different nameserver operators
-and reconfiguration of the NS set.</t>
+may subsequently be evolved such that it no longer directly aligns to
+a subset of root server instances. Future novel applications for the
+arpa zone may be pre-conditioned on ensuring there is no shared infrastructure
+between the root servers and the arpa servers.</t>
+
+<t>Any subequent changes to the parties providing name service
+for the zone is considered a normal management responsibility associated
+with zone management, and would be performed in accordance with <xref target="RFC3172"/>.</t>
 
 </section>
 <section anchor="zone-administration" title="Zone administration">
 
-<t>Publication of the “arpa” zone file to the authoritative “arpa” name
+<t>Publication of the arpa zone file to the authoritative arpa name
 servers is currently undertaken as part of the Root Zone Maintainer
 contract performed under the auspices of ICANN. Upon the separation of
-the “arpa” infrastructure from the root server infrastructure,
-publication of the “arpa” zone no longer necessarily needs to be
+the arpa infrastructure from the root server infrastructure,
+publication of the arpa zone no longer necessarily needs to be
 linked or inter-related to the root zone publication mechanisms.</t>
 
 </section>
@@ -153,13 +167,16 @@ linked or inter-related to the root zone publication mechanisms.</t>
 <t>The IANA shall coordinate the creation of a new “ns.arpa” zone and
 populate it with address records that reflect the IP addresses of the
 contemporary root servers documented within “root-servers.net” as its
-initial state. []</t>
+initial state.</t>
 
-<t>The IANA shall migrate the 12 NS records for the “arpa” zone to point to
-their respective new entries in the “ns.arpa” zone.</t>
+<t>The IANA will initially migrate the 12 NS records for the arpa zone
+to point to their respective new entries in the “ns.arpa” zone.</t>
 
-<t>Subsequently, the IANA may make changes to the NS set based on operational
-revisions as coordinated with the IAB.</t>
+<t>Subsequently, IANA will consult and coordinate on activity to reduce or
+eliminate reliance upon root zone and root server infrastructure for
+serving the arpa zone. Such changes will be performed in compliance
+with <xref target="RFC3172"/> and shall be conducted with all due care
+and deliberation to mitigate potential impacts on critical infrastructure.</t>
 
 </section>
 
@@ -212,6 +229,21 @@ revisions as coordinated with the IAB.</t>
 
 
 
+<reference  anchor="RFC7720" target='https://www.rfc-editor.org/info/rfc7720'>
+<front>
+<title>DNS Root Name Service Protocol and Deployment Requirements</title>
+<author initials='M.' surname='Blanchet' fullname='M. Blanchet'><organization /></author>
+<author initials='L-J.' surname='Liman' fullname='L-J. Liman'><organization /></author>
+<date year='2015' month='December' />
+<abstract><t>The DNS root name service is a critical part of the Internet architecture.  The protocol and deployment requirements for the DNS root name service are defined in this document.  Operational requirements are out of scope.</t></abstract>
+</front>
+<seriesInfo name='BCP' value='40'/>
+<seriesInfo name='RFC' value='7720'/>
+<seriesInfo name='DOI' value='10.17487/RFC7720'/>
+</reference>
+
+
+
 
     </references>
 
@@ -219,28 +251,21 @@ revisions as coordinated with the IAB.</t>
 <section anchor="open-issues" title="Open Issues">
 
 <t><list style="symbols">
-  <t>Any need to specify baseline requirements for the .arpa zone moving forward, as
-it pertains to this proposal? It is not clear if the assumption quoted
-from <xref target="RFC3172"/> of having parity requirements with root servers still
-holds true.</t>
-  <t>Ideally provide historical context on how arpa came to be served on the
-root servers.</t>
-  <t>Can nameservers for ns.arpa shall be the standard IANA infrastructure
+  <t>Should nameservers for ns.arpa be on the standard IANA infrastructure
 servers i.e. *.iana-servers.net? Are there any special considerations here
 that need to be documented?</t>
-  <t>RZM has a preference for non-.arpa hostnames. Is it better that the
+  <t>A preference has been expressed for non-.arpa hostnames. Is it better that the
 nameserver hostnames are in-bailiwick in .arpa or does that provide no
 benefit?</t>
-  <t>Would the hostname change need to be phased or can it be done in one
+  <t>Should the hostname change be staggered or can it be done in one
 action?</t>
-  <t>Consider impact of prospective new “arpa” entries described in
-draft-rosenbergjennings-dispatch-ripp-03 and draft-grover-add-policy-detection-00.</t>
 </list></t>
 
 </section>
 <section numbered="false" anchor="acknowledgments" title="Acknowledgments">
 
-<t>Thank you Michelle Cotton, Ted Hardie and Duane Wessels for initial feedback.</t>
+<t>Thank you Michelle Cotton, Ted Hardie, Duane Wessels and Suzanne Woolf for
+initial feedback.</t>
 
 </section>
 
@@ -248,68 +273,69 @@ draft-rosenbergjennings-dispatch-ripp-03 and draft-grover-add-policy-detection-0
   </back>
 
 <!-- ##markdown-source:
-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
-g0L874lU2wTEkQx3yBvxAXYV/wfUrFsFehkAAA==
+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
 
 -->
 
