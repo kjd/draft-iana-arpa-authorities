@@ -68,7 +68,7 @@ Table of Contents
      3.3.  Zone administration . . . . . . . . . . . . . . . . . . .   4
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
    5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     5.1.  Normative References  . . . . . . . . . . . . . . . . . .   4
+     5.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      5.2.  Informative References  . . . . . . . . . . . . . . . . .   5
    Appendix A.  Open Issues  . . . . . . . . . . . . . . . . . . . .   5
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   5
@@ -124,15 +124,19 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
 3.  Transition Process
 
-   The distinguish the operation of the arpa top-level domain zone from
+   To distinguish the operation of the arpa top-level domain zone from
    that of the root zone, the process would involve initially serving
    "arpa" from the same hosts (i.e. the root servers), using new
    hostnames dedicated to their role as arpa authorities.
 
-   Once completed, subsequent phases could include new hosts replacing
-   or augmenting the existing root server hosts, and separation of the
-   editing and distribution of the arpa zone from necessarily being
-   connected to the root zone.
+   Once completed, subsequent transitional phases could include new
+   hosts replacing or augmenting the existing root server hosts, and
+   separation of the editing and distribution of the arpa zone from
+   necessarily being connected to the root zone.
+
+   Full compartmentalization of arpa operations from root operations
+   would ultimately require different hosts to be serving the root zone,
+   and separation of the zone editing processes.
 
 3.1.  Dedicated nameservers
 
@@ -157,10 +161,6 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
    altered.  The new hostnames will initially map to the same IP
    addresses that provide service under the respective hostnames within
    root-servers.net.  At the request of individual name server
-   operators, the IP addresses may be pointed to alternative IP
-   addresses that is managed to the same rigour as their root service.
-
-
 
 
 
@@ -169,6 +169,9 @@ Davies & Arkko           Expires August 3, 2020                 [Page 3]
 
 Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
+
+   operators, the IP addresses may be pointed to alternative IP
+   addresses that is managed to the same rigour as their root service.
 
 3.2.  Administration of infrastructure
 
@@ -211,12 +214,9 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
 5.  References
 
-5.1.  Normative References
 
-   [RFC3172]  Huston, G., Ed., "Management Guidelines & Operational
-              Requirements for the Address and Routing Parameter Area
-              Domain ("arpa")", BCP 52, RFC 3172, DOI 10.17487/RFC3172,
-              September 2001, <https://www.rfc-editor.org/info/rfc3172>.
+
+
 
 
 
@@ -225,6 +225,13 @@ Davies & Arkko           Expires August 3, 2020                 [Page 4]
 
 Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
+
+5.1.  Normative References
+
+   [RFC3172]  Huston, G., Ed., "Management Guidelines & Operational
+              Requirements for the Address and Routing Parameter Area
+              Domain ("arpa")", BCP 52, RFC 3172, DOI 10.17487/RFC3172,
+              September 2001, <https://www.rfc-editor.org/info/rfc3172>.
 
 5.2.  Informative References
 
@@ -267,6 +274,14 @@ Authors' Addresses
    Email: kim.davies@iana.org
 
 
+
+
+
+Davies & Arkko           Expires August 3, 2020                 [Page 5]
+
+Internet-Draft      Nameservers for the .arpa Domain        January 2020
+
+
    Jari Arkko
    Internet Architecture Board
 
@@ -277,4 +292,45 @@ Authors' Addresses
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Davies & Arkko           Expires August 3, 2020                 [Page 6]

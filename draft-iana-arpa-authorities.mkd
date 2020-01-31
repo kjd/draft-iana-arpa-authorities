@@ -91,15 +91,19 @@ as those documented in {{RFC7720}}.
 
 # Transition Process
 
-The distinguish the operation of the arpa top-level domain zone from that
+To distinguish the operation of the arpa top-level domain zone from that
 of the root zone, the process would involve initially serving "arpa" from
 the same hosts (i.e. the root servers), using new hostnames dedicated to
 their role as arpa authorities.
 
-Once completed, subsequent phases could include new hosts replacing or
-augmenting the existing root server hosts, and separation of the editing and
-distribution of the arpa zone from necessarily being connected to the
-root zone.
+Once completed, subsequent transitional phases could include new hosts
+replacing or augmenting the existing root server hosts, and separation
+of the editing and distribution of the arpa zone from necessarily
+being connected to the root zone.
+
+Full compartmentalization of arpa operations from root operations would
+ultimately require different hosts to be serving the root zone, and
+separation of the zone editing processes.
 
 ## Dedicated nameservers
 
