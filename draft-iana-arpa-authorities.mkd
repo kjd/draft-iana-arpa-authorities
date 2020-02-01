@@ -59,9 +59,10 @@ based on the unique requirements of each service.
 
 The arpa top-level domain {{RFC3172}} is designated as
 an "infrastructure domain" to support techniques defined by Internet
-standards. Applications of the domain include various types of mappings,
-such as E.164 numbers to URIs, and IP addresses to domain names; as well
-as for non-unique use in residential home networks.
+standards. Zones under the arpa domain provide various mappings,
+such as E.164 numbers to URIs, and IP addresses to domain names. It
+also contains special use names, such as "home", which is a non-unique
+name used in residential home networks.
 
 Historically, the arpa zone has been hosted on almost all
 of the root name servers. {{RFC3172}} envisages the arpa domain to be
@@ -77,24 +78,22 @@ consideration in the IETF that involving the arpa zone have been discarded
 due to the risk of conflict with root operations.
 
 The proposed separation also resolves operational impacts of synchronizing edits
-between the management of the root zone and the "arpa" zone. The current
+between the management of the root zone and the arpa zone. The current
 dependency has unduly complicated the management systems and processes
 for the root zone.
 
 # Requirements for the "arpa" zone
 
-The arpa top-level domain continues to play a role in critical Internet
+The arpa domain continues to play a role in critical Internet
 operations, and this change does not propose weakening operational
 requirements described in {{RFC3172}} for the domain. Future operational
-requirements for arpa shall consider strong baseline requirements, such
+requirements for the arpa domain shall consider strong baseline requirements, such
 as those documented in {{RFC7720}}.
 
 # Transition Process
 
-To distinguish the operation of the arpa zone from that
-of the root zone, the process would involve initially serving "arpa" from
-the same hosts (i.e. the root servers), but using new hostnames dedicated to
-their role as arpa authorities.
+The process will dedicate new hostnames to the servers authoritative for
+the arpa zone, but will initially serve the arpa zone from the same hosts.
 
 Once completed, subsequent transitional phases would include using new hosts
 to replace or augment the existing root server hosts, and separation
@@ -103,16 +102,10 @@ being connected to the root zone.
 
 ## Dedicated nameserver hostnames
 
-The first phase of separation of service intends to identify a new
-naming scheme for the "arpa" authoritative nameservers. Removing the
-dependency on the "root-servers.net" zone (which is currently used for the root
-zone authorities) will eliminate a logical dependency that requires the
-coordinated editing of the arpa zone and the root zone.
-
 Consistent with the use of the arpa namespace itself to host name
 servers for other delegations in the arpa zone ({{RFC5855}}), this
-document specifies a new namespace of "ns.arpa" to be used for this
-purpose, with the nameserver set to be labelled as follows:
+document specifies a new namespace of "ns.arpa", with the
+nameserver set to be labelled as follows:
 
 ~~~~~
    a.ns.arpa
@@ -121,10 +114,12 @@ purpose, with the nameserver set to be labelled as follows:
    ...
 ~~~~~
 
-This component of this transition does not require the underlying hosts
-that provide arpa name service (that is, the root servers) to be altered. The 
-arpa zone will initially map the new hostnames to the same IP addresses that
-already provide service under the respective hostnames within root-servers.net.
+This eliminates a logical dependency that requires the coordinated editing of
+the arpa zone and the root zone. This component of this transition does not
+require the underlying hosts that provide arpa name service (that is, the
+root servers) be altered. The arpa zone will initially map the new
+hostnames to to the same IP addresses that already provide service under
+the respective hostnames within root-servers.net.
 
 ## Separation of infrastructure
 
@@ -182,7 +177,7 @@ initial state.
 The IANA will initially migrate the 12 NS records for the arpa zone
 to point to their respective new entries in the "ns.arpa" zone.
 
-Subsequently, IANA will consult and coordinate with all relevant
+Subsequently, the IAB and IANA will consult and coordinate with all relevant
 parties on activity to reduce or eliminate reliance upon root zone
 and root server infrastructure for serving the arpa zone. Such
 changes will be performed in compliance with {{RFC3172}} and shall
