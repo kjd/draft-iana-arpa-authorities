@@ -183,10 +183,6 @@ impacts on critical infrastructure.
 --- back
 
 # Open Issues
-
-* Should nameservers for ns.arpa be on the standard IANA infrastructure
-  servers i.e. *.iana-servers.net? Are there any special considerations here
-  that need to be documented?
   
 * A preference has been expressed for non-.arpa hostnames. Is it better that the
   nameserver hostnames are in-bailiwick in .arpa or does that provide no

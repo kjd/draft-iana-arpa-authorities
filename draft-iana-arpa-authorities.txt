@@ -72,7 +72,7 @@ Table of Contents
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      5.2.  Informative References  . . . . . . . . . . . . . . . . .   5
    Appendix A.  Open Issues  . . . . . . . . . . . . . . . . . . . .   5
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   6
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .   5
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   6
 
 1.  Introduction
@@ -255,10 +255,6 @@ Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
 Appendix A.  Open Issues
 
-   o  Should nameservers for ns.arpa be on the standard IANA
-      infrastructure servers i.e. *.iana-servers.net?  Are there any
-      special considerations here that need to be documented?
-
    o  A preference has been expressed for non-.arpa hostnames.  Is it
       better that the nameserver hostnames are in-bailiwick in .arpa or
       does that provide no benefit?
@@ -270,6 +266,10 @@ Appendix A.  Open Issues
    o  Should the hostname change be staggered or can it be done in one
       action?
 
+Acknowledgments
+
+   Thank you Michelle Cotton, Ted Hardie, Paul Hoffman, Duane Wessels
+   and Suzanne Woolf for initial feedback.
 
 
 
@@ -281,11 +281,6 @@ Davies & Arkko           Expires August 6, 2020                 [Page 5]
 
 Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
-
-Acknowledgments
-
-   Thank you Michelle Cotton, Ted Hardie, Paul Hoffman, Duane Wessels
-   and Suzanne Woolf for initial feedback.
 
 Authors' Addresses
 
@@ -301,6 +296,11 @@ Authors' Addresses
 
    Jari Arkko
    Internet Architecture Board
+
+
+
+
+
 
 
 
