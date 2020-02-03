@@ -8,6 +8,7 @@ stand_alone: true
 ipr: trust200902
 kw: Internet-Draft
 cat: bcp
+updates: RFC3172
 
 pi:
   toc: yes

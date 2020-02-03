@@ -4,9 +4,9 @@
 
 Network Working Group                                          K. Davies
 Internet-Draft                                                      IANA
-Intended status: Best Current Practice                          J. Arkko
-Expires: August 6, 2020                                              IAB
-                                                       February 03, 2020
+Updates: RFC3172 (if approved)                                  J. Arkko
+Intended status: Best Current Practice                               IAB
+Expires: August 6, 2020                                February 03, 2020
 
 
  Nameservers for the Address and Routing Parameter Area ("arpa") Domain
