@@ -5,8 +5,8 @@
 Network Working Group                                          K. Davies
 Internet-Draft                                                      IANA
 Intended status: Best Current Practice                          J. Arkko
-Expires: August 3, 2020                                              IAB
-                                                        January 31, 2020
+Expires: August 6, 2020                                              IAB
+                                                       February 03, 2020
 
 
  Nameservers for the Address and Routing Parameter Area ("arpa") Domain
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 3, 2020.
+   This Internet-Draft will expire on August 6, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 1]
+Davies & Arkko           Expires August 6, 2020                 [Page 1]
 
-Internet-Draft      Nameservers for the .arpa Domain        January 2020
+Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
 
 Table of Contents
@@ -77,69 +77,66 @@ Table of Contents
 
 1.  Introduction
 
-   This document separates the provision of authoritative service for
-   the "arpa" top-level domain zone from that of the root zone, allowing
-   for greater separation of concerns and thus more tailored operations
-   based on the unique requirements of each service.
-
-   The arpa top-level domain [RFC3172] is designated as an
+   The "arpa" top-level domain [RFC3172] is designated as an
    "infrastructure domain" to support techniques defined by Internet
-   standards.  Zones under the arpa domain provide various mappings,
+   standards.  Zones under the "arpa" domain provide various mappings,
    such as E.164 numbers to URIs, and IP addresses to domain names.  It
    also contains special use names, such as "home", which is a non-
    unique name used in residential home networks.
 
-   Historically, the arpa zone has been hosted on almost all of the root
-   name servers.  [RFC3172] envisages the arpa domain to be
+   Historically, the "arpa" zone has been hosted on almost all of the
+   root name servers, and [RFC3172] envisages the "arpa" domain to be
    "sufficiently critical that the operational requirements for the root
    servers apply to the operational requirements of the "arpa" servers".
-   To date, this has been implemented by serving the arpa domain
+   To date, this has been implemented by serving the "arpa" domain
    directly on a subset of the root server infrastructure.
 
-   This commingling of operations has caused complications.  The
-   resulting co-dependency of these two zones have entwined management
-   of both their content and their infrastructure.  For example, some
-   proposals under consideration in the IETF that involving the arpa
-   zone have been discarded due to the risk of conflict with root
-   operations.
+   This commingling of root server and "arpa" server operations has
+   entwined management of the zones contents and their infrastructure.
+   As a result, some proposals under consideration by the IETF involving
+   the "arpa" zone have been discarded due to the risk of conflict with
+   root operations.
 
-   The proposed separation also resolves operational impacts of
-   synchronizing edits between the management of the root zone and the
+   The separation described in this document resolves operational
+   impacts of synchronizing edits to the root zone and the "arpa" zone,
+   eliminating the current dependency and allowing more tailored
+   operations based on the unique requirements of each zone.
 
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 2]
+
+
+
+
+Davies & Arkko           Expires August 6, 2020                 [Page 2]
 
-Internet-Draft      Nameservers for the .arpa Domain        January 2020
+Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
-
-   arpa zone.  The current dependency has unduly complicated the
-   management systems and processes for the root zone.
 
 2.  Requirements for the "arpa" zone
 
-   The arpa domain continues to play a role in critical Internet
+   The "arpa" domain continues to play a role in critical Internet
    operations, and this change does not propose weakening operational
    requirements described in [RFC3172] for the domain.  Future
-   operational requirements for the arpa domain shall consider strong
+   operational requirements for the "arpa" domain shall consider strong
    baseline requirements, such as those documented in [RFC7720].
 
 3.  Transition Process
 
    The process will dedicate new hostnames to the servers authoritative
-   for the arpa zone, but will initially serve the arpa zone from the
-   same hosts.
+   for the "arpa" zone, but will initially serve the "arpa" zone from
+   the same hosts.
 
    Once completed, subsequent transitional phases would include using
    new hosts to replace or augment the existing root server hosts, and
-   separation of the editing and distribution of the arpa zone from
+   separation of the editing and distribution of the "arpa" zone from
    necessarily being connected to the root zone.
 
 3.1.  Dedicated nameserver hostnames
 
-   Consistent with the use of the arpa namespace itself to host name
-   servers for other delegations in the arpa zone ([RFC5855]), this
+   Consistent with the use of the "arpa" namespace itself to host name
+   servers for other delegations in the "arpa" zone ([RFC5855]), this
    document specifies a new namespace of "ns.arpa", with the nameserver
    set to be labelled as follows:
 
@@ -149,29 +146,29 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
       ...
 
    This eliminates a logical dependency that requires the coordinated
-   editing of the arpa zone and the root zone.  This component of this
-   transition does not require the underlying hosts that provide arpa
-   name service (that is, the root servers) be altered.  The arpa zone
+   editing of the "arpa" zone and the root zone.  This component of this
+   transition does not require the underlying hosts that provide "arpa"
+   name service (that is, the root servers) be altered.  The "arpa" zone
    will initially map the new hostnames to to the same IP addresses that
    already provide service under the respective hostnames within root-
    servers.net.
 
 3.2.  Separation of infrastructure
 
-   After initially migrating the arpa zone to use hostnames that are not
-   shared with the root zone, the underlying name service is expected to
-   evolve such that it no longer directly aligns to a subset of root
-   server instances.  Future novel applications for the arpa zone may be
+   After initially migrating the "arpa" zone to use hostnames that are
+   not shared with the root zone, the underlying name service is
+   expected to evolve such that it no longer directly aligns to a subset
+   of root server instances.  Future novel applications for the "arpa"
+   zone may be pre-conditioned on ensuring there is no shared
+   infrastructure between the root servers and the "arpa" servers.
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 3]
+
+Davies & Arkko           Expires August 6, 2020                 [Page 3]
 
-Internet-Draft      Nameservers for the .arpa Domain        January 2020
+Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
-
-   pre-conditioned on ensuring there is no shared infrastructure between
-   the root servers and the arpa servers.
 
    Any subequent changes to the parties providing name service for the
    zone is considered a normal management responsibility associated with
@@ -179,37 +176,37 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
 
 3.3.  Zone administration
 
-   Publication of the arpa zone file to the authoritative arpa name
+   Publication of the "arpa" zone file to the authoritative "arpa" name
    servers is currently undertaken as part of the Root Zone Maintainer
    contract performed under the auspices of ICANN.  Upon the separation
-   of the arpa infrastructure from the root server infrastructure,
-   publication of the arpa zone no longer necessarily needs to be linked
-   or inter-related to the root zone publication mechanisms.
+   of the "arpa" infrastructure from the root server infrastructure,
+   publication of the "arpa" zone no longer necessarily needs to be
+   linked or inter-related to the root zone publication mechanisms.
 
 3.4.  Conclusion of process
 
-   Full compartmentalization of arpa operations from root operations
-   minimally requires the following to be satisfied:
+   Full separation of "arpa" operations from root operations minimally
+   requires the following to be satisfied:
 
-   o  The arpa zone no longer shares any hostnames in its NS-set with
+   o  The "arpa" zone no longer shares any hostnames in its NS-set with
       the root zone;
 
    o  The hosts that provide authoritative name service are not the same
       hosts as the root servers, do not share any IPv4 or IPv6 addresses
       with the root servers, and are sufficiently separately provisioned
-      such that any unique arpa zone requirements can be deployed
+      such that any unique "arpa" zone requirements can be deployed
       without affecting how root zone service is provided;
 
-   o  The editorial and publication process for the arpa zone has any
+   o  The editorial and publication process for the "arpa" zone has any
       common dependencies with the root zone process removed, so that
-      the arpa zone can be managed, edited and provisioned wholly
+      the "arpa" zone can be managed, edited and provisioned wholly
       independently of the root zone.
 
-   Such compartmentalization is ultimately sought to allow for novel
-   uses of the arpa zone without the risk of inadvertantly impacting
-   root zone and root server operations.  It is recognized that
-   achieving this state requires a deliberative process involving
-   significant coordination to ensure impacts are minimized.
+   Such separation is ultimately sought to allow for novel uses of the
+   "arpa" zone without the risk of inadvertantly impacting root zone and
+   root server operations.  It is recognized that achieving this state
+   requires a deliberative process involving significant coordination to
+   ensure impacts are minimized.
 
 4.  IANA Considerations
 
@@ -218,20 +215,20 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2020
    contemporary root servers documented within "root-servers.net" as its
    initial state.
 
-
-
-
-Davies & Arkko           Expires August 3, 2020                 [Page 4]
-
-Internet-Draft      Nameservers for the .arpa Domain        January 2020
-
-
-   The IANA will initially migrate the 12 NS records for the arpa zone
+   The IANA will initially migrate the 12 NS records for the "arpa" zone
    to point to their respective new entries in the "ns.arpa" zone.
+
+
+
+
+Davies & Arkko           Expires August 6, 2020                 [Page 4]
+
+Internet-Draft      Nameservers for the .arpa Domain       February 2020
+
 
    Subsequently, the IAB and IANA will consult and coordinate with all
    relevant parties on activity to reduce or eliminate reliance upon
-   root zone and root server infrastructure for serving the arpa zone.
+   root zone and root server infrastructure for serving the "arpa" zone.
    Such changes will be performed in compliance with [RFC3172] and shall
    be conducted with all due care and deliberation to mitigate potential
    impacts on critical infrastructure.
@@ -277,9 +274,12 @@ Appendix A.  Open Issues
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 5]
+
+
+
+Davies & Arkko           Expires August 6, 2020                 [Page 5]
 
-Internet-Draft      Nameservers for the .arpa Domain        January 2020
+Internet-Draft      Nameservers for the .arpa Domain       February 2020
 
 
 Acknowledgments
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Davies & Arkko           Expires August 3, 2020                 [Page 6]
+Davies & Arkko           Expires August 6, 2020                 [Page 6]
