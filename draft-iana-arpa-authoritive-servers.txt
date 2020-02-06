@@ -180,7 +180,7 @@ Internet-Draft      Nameservers for the .arpa Domain       February 2020
 3.3.  Zone administration
 
    Publication of the "arpa" zone file to the authoritative "arpa" name
-   servers is currently undertaken as part of root zone maintenance
+   servers is currently undertaken alongside the root zone maintenance
    functions.  Upon the separation of the "arpa" infrastructure from the
    root server infrastructure, publication of the "arpa" zone no longer
    necessarily needs to be technically linked or inter-related to the
