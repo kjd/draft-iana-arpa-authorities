@@ -130,7 +130,7 @@ it no longer directly aligns to a subset of root server instances. With no
 shared infrastructure between the root servers and the "arpa" servers, future
 novel applications for the "arpa" zone may be possible.
 
-Any subequent changes to the parties providing name service
+Any subsequent changes to the parties providing name service
 for the zone is considered a normal management responsibility associated
 with zone management, and would be performed in accordance with {{RFC3172}}.
 
