@@ -1,7 +1,7 @@
 ---
 title: Nameservers for the Address and Routing Parameter Area ("arpa") Domain
 abbrev: Nameservers for the .arpa Domain
-docname: draft-iana-arpa-authoritative-servers-00
+docname: draft-iana-arpa-authoritative-servers-01
 
 stand_alone: true
 
@@ -87,8 +87,8 @@ based on the unique requirements of each zone.
 The "arpa" domain continues to play a role in critical Internet
 operations, and this change does not propose weakening operational
 requirements described in {{RFC3172}} for the domain. Future operational
-requirements for the "arpa" domain shall consider strong baseline requirements, such
-as those documented in {{RFC7720}}.
+requirements for the "arpa" domain are encouraged to follow strong
+baseline requirements, such as those documented in {{RFC7720}}.
 
 # Transition Process
 
@@ -115,12 +115,17 @@ nameserver set to be labelled as follows:
    ...
 ~~~~~
 
-This eliminates a logical dependency that requires the coordinated editing of
-the "arpa" zone and the root zone. This component of this transition does not
-require the underlying hosts that provide "arpa" name service (that is, the
-root servers) be altered. The "arpa" zone will initially map the new
-hostnames to to the same IP addresses that already provide service under
-the respective hostnames within root-servers.net.
+Dedicated hostnames eliminate a logical dependency that requires the
+coordinated editing of the "arpa" zone and the root zone. This component
+of this transition does not require the underlying hosts that provide
+"arpa" name service (that is, the root servers) be altered. The "arpa"
+zone will initially map the new hostnames to to the same IP addresses
+that already provide service under the respective hostnames within
+root-servers.net.
+
+As these nameservers are completely in-bailiwick of the "arpa" zone,
+they will require glue records in the root zone. This is consistent with
+current practice and requires no operational changes to the root zone.
 
 ## Separation of infrastructure
 
@@ -185,25 +190,20 @@ changes will be performed in compliance with {{RFC3172}} and shall
 be conducted with all due care and deliberation to mitigate potential
 impacts on critical infrastructure.
 
---- back
+# Security Considerations
 
-# Open Issues
-  
-* A preference has been expressed for non-.arpa hostnames. Is it better that the
-  nameserver hostnames are in-bailiwick in .arpa or does that provide no
-  benefit?
-  
-* Should the name servers stick to the same letter-based nomenclature as
-  the root zone? Some operators have expressed a strong desire to move away
-  from the letters for the root zone.
-  
-* Should the hostname change be staggered or can it be done in one
-  action?
+The security of the "arpa" zone is not necessarily impacted by any
+aspects of these changes. Robust practices associated with administering
+the content of the zone (including signing operations) as well as its
+distribution will continue to be necessary.
+
+--- back
 
 # Acknowledgments
 {:numbered="false"}
 
-Thank you Michelle Cotton, Ted Hardie, Paul Hoffman, Russ Housley, Duane
-Wessels and Suzanne Woolf for initial feedback.
+Thank you Alyssa Cooper, Michelle Cotton, Wes Hardaker, Ted Hardie,
+Paul Hoffman, Russ Housley, Duane Wessels and Suzanne Woolf for
+providing review and feedback.
 
 
