@@ -62,7 +62,7 @@ an "infrastructure domain" to support techniques defined by Internet
 standards. Zones under the "arpa" domain provide various mappings,
 such as IP addresses to domain names and E.164 numbers to URIs. It
 also contains special use names such as "home", which is a non-unique
-name used in residential home networks.
+name used in residential networks.
 
 Historically, the "arpa" zone has been hosted on almost all
 of the root name servers, and {{RFC3172}} envisages the "arpa" domain to be
@@ -106,7 +106,7 @@ such changes may be performed are beyond the scope of this document.
 Consistent with the use of the "arpa" namespace itself to host name
 servers for other delegations in the "arpa" zone ({{RFC5855}}), this
 document specifies a new namespace of "ns.arpa", with the
-nameserver set to be labelled as follows:
+nameserver set for the "arpa" zone to be labelled as follows:
 
 ~~~~~
    a.ns.arpa
@@ -116,12 +116,12 @@ nameserver set to be labelled as follows:
 ~~~~~
 
 Dedicated hostnames eliminate a logical dependency that requires the
-coordinated editing of the "arpa" zone and the root zone. This component
-of this transition does not require the underlying hosts that provide
-"arpa" name service (that is, the root servers) be altered. The "arpa"
-zone will initially map the new hostnames to to the same IP addresses
-that already provide service under the respective hostnames within
-root-servers.net.
+coordinated editing of the nameservers for the "arpa" zone and the root
+zone. This component of this transition does not require the underlying
+hosts that provide "arpa" name service (that is, the root servers) be
+altered. The "arpa" zone will initially map the new hostnames to the
+same IP addresses that already provide service under the respective
+hostnames within root-servers.net.
 
 Because these nameservers are completely in-bailiwick of the "arpa" zone,
 they will require glue records in the root zone. This is consistent with
@@ -135,9 +135,9 @@ it no longer directly aligns to a subset of root server instances. With no
 shared infrastructure between the root servers and the "arpa" servers, future
 novel applications for the "arpa" zone may be possible.
 
-Any subsequent changes to the parties providing name service
-for the zone is considered a normal management responsibility associated
-with zone management, and would be performed in accordance with {{RFC3172}}.
+Any subsequent changes to the parties providing name service for the
+zone is considered a normal management responsibility, and would be
+performed in accordance with {{RFC3172}}.
 
 ## Zone administration
 

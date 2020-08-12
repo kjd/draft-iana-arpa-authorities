@@ -38,7 +38,7 @@
       </address>
     </author>
 
-    <date year="2020" month="August" day="06"/>
+    <date year="2020" month="August" day="12"/>
 
     
     
@@ -68,7 +68,7 @@ an “infrastructure domain” to support techniques defined by Internet
 standards. Zones under the “arpa” domain provide various mappings,
 such as IP addresses to domain names and E.164 numbers to URIs. It
 also contains special use names such as “home”, which is a non-unique
-name used in residential home networks.</t>
+name used in residential networks.</t>
 
 <t>Historically, the “arpa” zone has been hosted on almost all
 of the root name servers, and <xref target="RFC3172"/> envisages the “arpa” domain to be
@@ -114,7 +114,7 @@ such changes may be performed are beyond the scope of this document.</t>
 <t>Consistent with the use of the “arpa” namespace itself to host name
 servers for other delegations in the “arpa” zone (<xref target="RFC5855"/>), this
 document specifies a new namespace of “ns.arpa”, with the
-nameserver set to be labelled as follows:</t>
+nameserver set for the “arpa” zone to be labelled as follows:</t>
 
 <figure><artwork><![CDATA[
    a.ns.arpa
@@ -124,12 +124,12 @@ nameserver set to be labelled as follows:</t>
 ]]></artwork></figure>
 
 <t>Dedicated hostnames eliminate a logical dependency that requires the
-coordinated editing of the “arpa” zone and the root zone. This component
-of this transition does not require the underlying hosts that provide
-“arpa” name service (that is, the root servers) be altered. The “arpa”
-zone will initially map the new hostnames to to the same IP addresses
-that already provide service under the respective hostnames within
-root-servers.net.</t>
+coordinated editing of the nameservers for the “arpa” zone and the root
+zone. This component of this transition does not require the underlying
+hosts that provide “arpa” name service (that is, the root servers) be
+altered. The “arpa” zone will initially map the new hostnames to the
+same IP addresses that already provide service under the respective
+hostnames within root-servers.net.</t>
 
 <t>Because these nameservers are completely in-bailiwick of the “arpa” zone,
 they will require glue records in the root zone. This is consistent with
@@ -144,9 +144,9 @@ it no longer directly aligns to a subset of root server instances. With no
 shared infrastructure between the root servers and the “arpa” servers, future
 novel applications for the “arpa” zone may be possible.</t>
 
-<t>Any subsequent changes to the parties providing name service
-for the zone is considered a normal management responsibility associated
-with zone management, and would be performed in accordance with <xref target="RFC3172"/>.</t>
+<t>Any subsequent changes to the parties providing name service for the
+zone is considered a normal management responsibility, and would be
+performed in accordance with <xref target="RFC3172"/>.</t>
 
 </section>
 <section anchor="zone-administration" title="Zone administration">
@@ -293,75 +293,75 @@ providing review and feedback.</t>
   </back>
 
 <!-- ##markdown-source:
-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
+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
-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
+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
 
 -->
 

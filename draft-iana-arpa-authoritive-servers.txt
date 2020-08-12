@@ -6,7 +6,7 @@ Network Working Group                                          K. Davies
 Internet-Draft                                                      IANA
 Updates: RFC3172 (if approved)                                  J. Arkko
 Intended status: Best Current Practice                          Ericsson
-Expires: February 7, 2021                                August 06, 2020
+Expires: February 13, 2021                               August 12, 2020
 
 
  Nameservers for the Address and Routing Parameter Area ("arpa") Domain
@@ -33,7 +33,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 7, 2021.
+   This Internet-Draft will expire on February 13, 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 1]
+Davies & Arkko          Expires February 13, 2021               [Page 1]
 
 Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
@@ -82,7 +82,7 @@ Table of Contents
    standards.  Zones under the "arpa" domain provide various mappings,
    such as IP addresses to domain names and E.164 numbers to URIs.  It
    also contains special use names such as "home", which is a non-unique
-   name used in residential home networks.
+   name used in residential networks.
 
    Historically, the "arpa" zone has been hosted on almost all of the
    root name servers, and [RFC3172] envisages the "arpa" domain to be
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 2]
+Davies & Arkko          Expires February 13, 2021               [Page 2]
 
 Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
@@ -141,7 +141,7 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
    Consistent with the use of the "arpa" namespace itself to host name
    servers for other delegations in the "arpa" zone ([RFC5855]), this
    document specifies a new namespace of "ns.arpa", with the nameserver
-   set to be labelled as follows:
+   set for the "arpa" zone to be labelled as follows:
 
       a.ns.arpa
       b.ns.arpa
@@ -149,12 +149,12 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
       ...
 
    Dedicated hostnames eliminate a logical dependency that requires the
-   coordinated editing of the "arpa" zone and the root zone.  This
-   component of this transition does not require the underlying hosts
-   that provide "arpa" name service (that is, the root servers) be
-   altered.  The "arpa" zone will initially map the new hostnames to to
-   the same IP addresses that already provide service under the
-   respective hostnames within root-servers.net.
+   coordinated editing of the nameservers for the "arpa" zone and the
+   root zone.  This component of this transition does not require the
+   underlying hosts that provide "arpa" name service (that is, the root
+   servers) be altered.  The "arpa" zone will initially map the new
+   hostnames to the same IP addresses that already provide service under
+   the respective hostnames within root-servers.net.
 
    Because these nameservers are completely in-bailiwick of the "arpa"
    zone, they will require glue records in the root zone.  This is
@@ -165,7 +165,7 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 3]
+Davies & Arkko          Expires February 13, 2021               [Page 3]
 
 Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
@@ -180,8 +180,8 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
    the "arpa" zone may be possible.
 
    Any subsequent changes to the parties providing name service for the
-   zone is considered a normal management responsibility associated with
-   zone management, and would be performed in accordance with [RFC3172].
+   zone is considered a normal management responsibility, and would be
+   performed in accordance with [RFC3172].
 
 3.3.  Zone administration
 
@@ -221,7 +221,7 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 4]
+Davies & Arkko          Expires February 13, 2021               [Page 4]
 
 Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
@@ -277,7 +277,7 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 5]
+Davies & Arkko          Expires February 13, 2021               [Page 5]
 
 Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Davies & Arkko          Expires February 7, 2021                [Page 6]
+Davies & Arkko          Expires February 13, 2021               [Page 6]
