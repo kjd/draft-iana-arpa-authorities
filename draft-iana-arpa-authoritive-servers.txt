@@ -6,11 +6,11 @@ Network Working Group                                          K. Davies
 Internet-Draft                                                      IANA
 Updates: RFC3172 (if approved)                                  J. Arkko
 Intended status: Best Current Practice                          Ericsson
-Expires: February 13, 2021                               August 12, 2020
+Expires: July 8, 2021                                   January 04, 2021
 
 
  Nameservers for the Address and Routing Parameter Area ("arpa") Domain
-                draft-iana-arpa-authoritative-servers-01
+                draft-iana-arpa-authoritative-servers-02
 
 Abstract
 
@@ -33,11 +33,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 13, 2021.
+   This Internet-Draft will expire on July 8, 2021.
 
 Copyright Notice
 
-   Copyright (c) 2020 IETF Trust and the persons identified as the
+   Copyright (c) 2021 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Davies & Arkko          Expires February 13, 2021               [Page 1]
+Davies & Arkko            Expires July 8, 2021                  [Page 1]
 
-Internet-Draft      Nameservers for the .arpa Domain         August 2020
+Internet-Draft      Nameservers for the .arpa Domain        January 2021
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Davies & Arkko          Expires February 13, 2021               [Page 2]
+Davies & Arkko            Expires July 8, 2021                  [Page 2]
 
-Internet-Draft      Nameservers for the .arpa Domain         August 2020
+Internet-Draft      Nameservers for the .arpa Domain        January 2021
 
 
 2.  Requirements for the "arpa" zone
@@ -122,6 +122,11 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
    operational requirements for the "arpa" domain are encouraged to
    follow strong baseline requirements such as those documented in
    [RFC7720].
+
+   Changes to the administration of the "arpa" zone do not alter the
+   management practices of other zones delegated within the "arpa"
+   namespace.  For example, "ip6.arpa" would continue to be managed in
+   accordance with [RFC5855].
 
 3.  Transition Process
 
@@ -156,19 +161,19 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
    hostnames to the same IP addresses that already provide service under
    the respective hostnames within root-servers.net.
 
+
+
+
+
+Davies & Arkko            Expires July 8, 2021                  [Page 3]
+
+Internet-Draft      Nameservers for the .arpa Domain        January 2021
+
+
    Because these nameservers are completely in-bailiwick of the "arpa"
    zone, they will require glue records in the root zone.  This is
    consistent with current practice and requires no operational changes
    to the root zone.
-
-
-
-
-
-Davies & Arkko          Expires February 13, 2021               [Page 3]
-
-Internet-Draft      Nameservers for the .arpa Domain         August 2020
-
 
 3.2.  Separation of infrastructure
 
@@ -213,28 +218,27 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
    Such separation is ultimately sought to allow for novel uses of the
    "arpa" zone without the risk of inadvertantly impacting root zone and
+
+
+
+Davies & Arkko            Expires July 8, 2021                  [Page 4]
+
+Internet-Draft      Nameservers for the .arpa Domain        January 2021
+
+
    root server operations.  It is recognized that achieving this state
    requires a deliberative process involving significant coordination to
    ensure impacts are minimized.
 
-
-
-
-
-Davies & Arkko          Expires February 13, 2021               [Page 4]
-
-Internet-Draft      Nameservers for the .arpa Domain         August 2020
-
-
 4.  IANA Considerations
 
-   The IANA shall coordinate the creation of a new "ns.arpa" zone and
+   The IANA shall coordinate the creation of the "ns.arpa" namespace and
    populate it with address records that reflect the IP addresses of the
    contemporary root servers documented within "root-servers.net" as its
    initial state.
 
    The IANA will initially migrate the 12 NS records for the "arpa" zone
-   to point to their respective new entries in the "ns.arpa" zone.
+   to point to their respective new entries in the "ns.arpa" domain.
 
    Subsequently, the IAB and IANA will consult and coordinate with all
    relevant parties on activity to reduce or eliminate reliance upon
@@ -273,20 +277,16 @@ Internet-Draft      Nameservers for the .arpa Domain         August 2020
 
 
 
-
-
-
-
-Davies & Arkko          Expires February 13, 2021               [Page 5]
+Davies & Arkko            Expires July 8, 2021                  [Page 5]
 
-Internet-Draft      Nameservers for the .arpa Domain         August 2020
+Internet-Draft      Nameservers for the .arpa Domain        January 2021
 
 
 Acknowledgments
 
-   Thank you Alyssa Cooper, Michelle Cotton, Wes Hardaker, Ted Hardie,
-   Paul Hoffman, Russ Housley, Duane Wessels and Suzanne Woolf for
-   providing review and feedback.
+   Thank you Alyssa Cooper, Michelle Cotton, Lars-John Liman, Wes
+   Hardaker, Ted Hardie, Paul Hoffman, Russ Housley, Oscar Robles-Garay,
+   Duane Wessels and Suzanne Woolf for providing review and feedback.
 
 Authors' Addresses
 
@@ -333,4 +333,4 @@ Authors' Addresses
 
 
 
-Davies & Arkko          Expires February 13, 2021               [Page 6]
+Davies & Arkko            Expires July 8, 2021                  [Page 6]
