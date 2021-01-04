@@ -208,7 +208,7 @@ distribution will continue to be necessary.
 # Acknowledgments
 {:numbered="false"}
 
-Thank you Alyssa Cooper, Michelle Cotton, Lars-John Liman, Wes Hardaker,
+Thank you Alyssa Cooper, Michelle Cotton, Lars-Johan Liman, Wes Hardaker,
 Ted Hardie, Paul Hoffman, Russ Housley, Oscar Robles-Garay, Duane
 Wessels and Suzanne Woolf for providing review and feedback.
 

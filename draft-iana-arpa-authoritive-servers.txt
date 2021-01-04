@@ -284,7 +284,7 @@ Internet-Draft      Nameservers for the .arpa Domain        January 2021
 
 Acknowledgments
 
-   Thank you Alyssa Cooper, Michelle Cotton, Lars-John Liman, Wes
+   Thank you Alyssa Cooper, Michelle Cotton, Lars-Johan Liman, Wes
    Hardaker, Ted Hardie, Paul Hoffman, Russ Housley, Oscar Robles-Garay,
    Duane Wessels and Suzanne Woolf for providing review and feedback.
 
