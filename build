@@ -1,4 +1,4 @@
 #!/bin/bash
 
-kramdown-rfc2629 draft-iana-arpa-authoritive-servers.mkd > draft-iana-arpa-authoritive-servers.xml
-xml2rfc draft-iana-arpa-authoritive-servers.xml
+kramdown-rfc2629 draft-iab-arpa-authoritative-servers.mkd > draft-iab-arpa-authoritative-servers.xml
+xml2rfc draft-iab-arpa-authoritative-servers.xml

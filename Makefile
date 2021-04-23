@@ -1,4 +1,4 @@
-base:	draft-iana-arpa-authorities.txt
+base:	draft-iab-arpa-authoritative-servers.txt
 
-draft-iana-arpa-authorities.txt draft-iana-arpa-authorities.xml:	draft-iana-arpa-authorities.mkd
+draft-iab-arpa-authoritative-servers.txt draft-iab-arpa-authoritative-servers.xml:	draft-iab-arpa-authoritative-servers.mkd
 	sh build

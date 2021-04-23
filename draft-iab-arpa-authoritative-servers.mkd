@@ -1,13 +1,13 @@
 ---
 title: Nameservers for the Address and Routing Parameter Area ("arpa") Domain
 abbrev: Nameservers for the .arpa Domain
-docname: draft-iana-arpa-authoritative-servers-02
+docname: draft-iab-arpa-authoritative-servers-00
 
 stand_alone: true
 
 ipr: trust200902
 kw: Internet-Draft
-cat: bcp
+cat: info
 updates: RFC3172
 
 pi:
