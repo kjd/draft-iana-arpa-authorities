@@ -251,8 +251,9 @@ Internet-Draft      Nameservers for the .arpa Domain           July 2021
 
    The security of the "arpa" zone is not necessarily impacted by any
    aspects of these changes.  Robust practices associated with
-   administering the content of the zone (including signing operations)
-   as well as its distribution will continue to be necessary.
+   administering the content of the zone (including signing the zone
+   with DNSSEC) as well as its distribution will continue to be
+   necessary.
 
 6.  References
 
@@ -273,7 +274,6 @@ Internet-Draft      Nameservers for the .arpa Domain           July 2021
               Protocol and Deployment Requirements", BCP 40, RFC 7720,
               DOI 10.17487/RFC7720, December 2015,
               <https://www.rfc-editor.org/info/rfc7720>.
-
 
 
 

@@ -200,8 +200,8 @@ impacts on critical infrastructure.
 
 The security of the "arpa" zone is not necessarily impacted by any
 aspects of these changes. Robust practices associated with administering
-the content of the zone (including signing operations) as well as its
-distribution will continue to be necessary.
+the content of the zone (including signing the zone with DNSSEC) as well
+as its distribution will continue to be necessary.
 
 --- back
 
