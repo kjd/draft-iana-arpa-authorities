@@ -65,16 +65,18 @@ contains special use names such as "home", which is a non-unique name
 used in residential networks.
 
 Historically, the "arpa" zone has been hosted on almost all of the
-root name servers, and {{RFC3172}} envisages the "arpa" domain to be
+root nameservers, and {{RFC3172}} envisages the "arpa" domain to be
 "sufficiently critical that the operational requirements for the root
-servers apply to the operational requirements of the "arpa" servers". To
+nameservers apply to the operational requirements of the "arpa" servers". To
 date, this has been implemented by serving the "arpa" domain directly on
 a subset of the root server infrastructure.
 
 This bundling of root server and "arpa" server operations has entwined
 management of the zones contents and their infrastructure. As a result,
 some proposals under consideration by the IETF involving the "arpa" zone
-have been discarded due to the risk of conflict with root operations.
+have been discarded due to the risk of conflict with operations associated
+with managing the content of the root zone, or administering the root
+nameservers.
 
 The separation described in this document resolves operational impacts
 of synchronizing edits to the root zone and the "arpa" zone by
@@ -101,7 +103,7 @@ the "arpa" zone, but will initially serve the "arpa" zone from the same
 hosts.
 
 Once completed, subsequent transitional phases could include using
-new hosts to replace or augment the existing root server hosts, and
+new hosts to replace or augment the existing root nameserver hosts, and
 separation of the editing and distribution of the "arpa" zone from
 necessarily being connected to the root zone. Any future management
 considerations regarding how such changes may be performed are beyond
@@ -124,7 +126,7 @@ nameserver set for the "arpa" zone to be labelled as follows:
 Dedicated hostnames eliminate a logical dependency that requires the
 coordinated editing of the nameservers for the "arpa" zone and the root
 zone. This component of this transition does not require the underlying
-hosts that provide "arpa" name service (that is, the root servers) be
+hosts that provide "arpa" name service (that is, the root nameservers) be
 altered. The "arpa" zone will initially map the new hostnames to the
 same IP addresses that already provide service under the respective
 hostnames within root-servers.net.
@@ -137,8 +139,8 @@ current practice and requires no operational changes to the root zone.
 
 After initially migrating the "arpa" zone to use hostnames that are not shared
 with the root zone, the underlying name service is expected to evolve such that
-it no longer directly aligns to a subset of root server instances. With no
-shared infrastructure between the root servers and the "arpa" servers, future
+it no longer directly aligns to a subset of root nameserver instances. With no
+shared infrastructure between the root nameservers and the "arpa" nameservers, future
 novel applications for the "arpa" zone may be possible.
 
 Any subsequent changes to the parties providing name service for the
@@ -149,21 +151,21 @@ performed in accordance with {{RFC3172}}.
 
 Publication of the "arpa" zone file to the authoritative "arpa" name
 servers is currently undertaken alongside the root zone maintenance functions.
-Upon the separation of the "arpa" infrastructure from the root server
+Upon the separation of the "arpa" infrastructure from the root nameserver
 infrastructure, publication of the "arpa" zone no longer necessarily needs
 to be technically linked or inter-related to the root zone publication
 mechanisms.
 
 ## Conclusion of process
 
-Full technical separation of "arpa" operations from root operations
-minimally requires the following to be satisfied:
+Full technical separation of operations of the "arpa" zone and root zone requires
+the following to be satisfied:
 
 * The "arpa" zone no longer shares any hostnames in its NS-set with the root
   zone;
   
 * The hosts that provide authoritative name service are not the same hosts
-  as the root servers, do not share any IPv4 or IPv6 addresses with the
+  as the root nameservers, do not share any IPv4 or IPv6 addresses with the
   root servers, and are sufficiently separately provisioned such
   that any unique "arpa" zone requirements can be deployed without affecting
   how root zone service is provided;
