@@ -200,7 +200,7 @@ Internet-Draft      Nameservers for the .arpa Domain           July 2021
 3.4.  Conclusion of process
 
    Full technical separation of operations of the "arpa" zone and root
-   zone requires the following to be satisfied:
+   zone minimally requires the following to be satisfied:
 
    o  The "arpa" zone no longer shares any hostnames in its NS-set with
       the root zone;

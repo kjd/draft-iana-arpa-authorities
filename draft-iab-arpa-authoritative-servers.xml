@@ -169,8 +169,8 @@ mechanisms.</t>
 </section>
 <section anchor="conclusion-of-process" title="Conclusion of process">
 
-<t>Full technical separation of operations of the “arpa” zone and root zone requires
-the following to be satisfied:</t>
+<t>Full technical separation of operations of the “arpa” zone and root zone 
+minimally requires the following to be satisfied:</t>
 
 <t><list style="symbols">
   <t>The “arpa” zone no longer shares any hostnames in its NS-set with the root
@@ -301,7 +301,7 @@ Wessels and Suzanne Woolf for providing review and feedback.</t>
   </back>
 
 <!-- ##markdown-source:
-H4sIAJ8I5mAAA31ZXW8bNxZ9568glJdmIWkdb9JstVigbpxsnGZdI04RoC8L
+H4sIAAAL5mAAA31ZXW8bNxZ9568glJdmIWkdb9JstVigbpxsnGZdI04RoC8L
 aoaSuB6RU5JjVwmyv33PveTMcGSlBYpIIw55P8499/B6sViIaGKjV/Ja7XXQ
 /l77IDfOy7jT8qKuvQ5BKlvLD66Lxm7ljfJYGbWXF14r+d1M+VbNnspLt1fG
 CrVee31/erslLe0X1q6yWLOStVebuDBqvaCfF6qLO+dNVNHc60XeYnF2JkSI
@@ -352,27 +352,27 @@ REzAhHeqUnsKdyGYdUPZoaZQNMGjPCJtkSgwwftR6PIRXPMDhGoqNr6k+j2Q
 USgYKgVasTaNiYekEJP6QJWObYWE2SnNkaRfQtRvzDsTPSXETbfu3T/ZMk0z
 3EWmSqMI7NBFyJ1UAcg2YyeSXD0aeoxynwQliodt7ictUBy/tlmhP273+dQj
 JAy65QgGYrpuLts/93bEbKkSrNZ1EKkPpSkJTwUkVO4d3SYIsqjGhdeNOqUi
-ylPFXhNcTNiHlBQ0cQilkA1qezH4pgMZDYcdBaK4/p1wgilnOLsnH1YbqXMy
-S7A3AbsE9OsavfQvj6h+jAbXH9XUoeARmnqh21zfLqiQJwyCXks7/IPmcmnf
-E51pCqdJjfTs1EvR9Dp2U+Fktc/7SwAbynZe3dw/p9Tg3++LBjQoD1kOEPLN
-i96dzFv6MWCTmxWlCQnmQZbMRGoP/UWyjN3k8lMpS9GGlGjcIV85HDS52myo
-y1ka3JJyHLNW8GwOV10Ek6QGIgdckNUlpvv7wyke26mUQfTDPQ90B2ljisCU
-sM2bwQ0wJQl/Nw6eyp2xV3YxX4HmbCIxGtlXRO5h56hyjO3P5lHQpsxI6oDw
-9Za6SQF8xKJrotmnfATXbXeRewnfPsnjROhd4Ove8TVoiHo5VoF2q++JpdiQ
-NK0YriCTahKPBks8kDSBVcLWms9U+YyIamd0nvXg50BD/FEDKAGBjdu5T7Dv
-YzwOiGhyCw2NgKKz9PqS/Kc+awPRXT9VIbwSm+/pcL5X0l8s5KvJ7SRdLPkH
-VAdYZRStaZYCMTbhw16mF+qdrl6tazviNxR9AksuqkElZXm8aYDpNPkqlV9O
-Mk+koHC98odJBZYzgSzTZsdSb0b1D84RWfek2C4LD4/VKaui5Oezc0nD9mzs
-qUkODWucsTETuPGFDmWBC+u80eO1aIhUnqgIYLZXBf3U+OriJ8bQaB41fACZ
-nxa5SDFlCdroe2Rf9EKChstkBPp/uj7XXbo9j/cVvGO4i3bUOgf0iqEXnByr
-chROzGqTxqX6E722YcsnF1mec0FZm5OKg71jvIk1zyHpzxg5tewlzTirRNa1
-HEsi4XyPBNJ0BvmIaTQvMuYpGMMI7dGQmFQzBAgF6lQRhP7HE13TpItV2ffT
-kWmiDeIUisHQQxmaOgdnKT+4dRfKadM4le1rpZi1ihOj2XS3TkOTgQVyVgb2
-oj8X3b5+9ZTK4AHXYZHKYTr36DFWTqZ6rw75T0xrVd1RtC6qO+secK3mKUwQ
-X1bpjy66/udso5qgZ18pcsreyYPr5EVzwC4ILZHgXP7bVDu6lONBjM7O5Xvl
-w+Kdw3r5HjyNJ58Qi7cKqvQOL4iPCAd9M1BiN6pr5Fu32fC6Dx2I5K3rQqNR
-N7/QIJyC2uiw+Bf4H88uOwU8fyIyaZK6v+0+K4vIfHKu2TCUR8VNf+VDwdKy
-DdQb+QvXxf8BYXsohXofAAA=
+ylPFXhNcTNiHlBQ0cQilkA1qezH4pgMZDYcdBaK4/p1wgilnOFtQuvdsb9m6
+chNlwmDHAjYMaN012upfHrH+GBguRSqvQ0EpNABD47m+XVBNT8gEbZd2+AeN
+6NK+J5rUFFmTcumJqlel6XXspsLJwp/39wE2lO28url/TlnCv98XvWgQIbKc
+JeRLGL07Gb30E8Em9y3KGHLNMy2ZOdUe+jtlGbvJPahSlqINVdG4Q759OMhz
+tdlQw7M0wyUROSawoNwcrroIJqkORA4QIatLePdXiVOUtlMpg2iNe57tDirH
+FIEpEZw3gxsgTboDuHEGVe6MvbKL+TY0ZxOJ3Mi+InIPO0egNLY/m6dCmzIj
+qRnC11tqLEUNIBZdEwFrzkdw3XYXua3wRZQ8TtzeBb75Hd+IhqiXExbIuPqe
+CIsNSYOL4TYyKSzxaMbEs0kTWDBsrflMJMCIqHZG57EPfg40zx/LUAlobVzU
+fYJ9H+NxVkRDXMhpBBRNppea5D+1XBuI+foBC+GVK50O5ysm/fFCvppcVNId
+k39AdYBgRv2axirQZRNq7BV7IeTpFta6tiOqQ9EnsOSiGgRTVsqbBphOQ7BS
+BOYk83AKYtcrf5hUYDkeyIptdqz6ZlT/4ByRJVCK7bLw8FioskBKfj47lzR3
+z8aeGurQ3MYZGzOXG19IUta6sM4bPd6Qhkjl4YoAZnuB0A+Qry5+YgyN5lHv
+B5D5aZGLFFNWo42+R/ZFrylozkxGQAqkm3TdpYv0eHXBO4YbakdddECvGNrC
+yQkrR+HE2DbJXao/0csctnxyp+WRF0S2OSk+2DvGm1jzSJL+opFTy17SuLNK
+ZF3LsSQSzvdIIA1qkI+YpvQiY56CMUzTHs2LSUBDi1CgThVB6H880UBNumOV
+EiAdmYbbIE6hGAw9lCGvc3CW8oNbd6EcPI0D2r5WirGrODGlTdfsND8ZWCBn
+ZWAv+svR7etXT6kMHnAzFqkcpiOQHmPlkKr36pD/2rRW1R1F66K6s+4BN2we
+yATxZZX+/qLrf842qgl69pUip+ydPLhOXjQH7ILQEgnO5b9NtaP7OR7E6Oxc
+vlc+LN45rJfvwdN48gmxeKsgUO/wgviIcNA3A1F2o7pGvnWbDa/70IFI3rou
+NBp18wvNxCmojQ6Lf4H/8eyyU8DzJyKTJgn92+6zsojMJ+eaDUN5FN/0Bz8U
+LC3bQMiRv3Bd/B+fQoTshR8AAA==
 
 -->
 
