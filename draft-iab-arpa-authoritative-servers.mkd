@@ -131,8 +131,8 @@ altered. The "arpa" zone will initially map the new hostnames to the
 same IP addresses that already provide service under the respective
 hostnames within root-servers.net.
 
-Because these nameservers are completely in-bailiwick of the "arpa" zone,
-they will require glue records in the root zone. This is consistent with
+Because these nameservers are completely within the "arpa" zone, they
+will require glue records in the root zone. This is consistent with
 current practice and requires no operational changes to the root zone.
 
 ## Separation of infrastructure
