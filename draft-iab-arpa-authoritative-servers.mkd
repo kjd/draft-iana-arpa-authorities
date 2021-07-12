@@ -1,7 +1,7 @@
 ---
 title: Nameservers for the Address and Routing Parameter Area ("arpa") Domain
 abbrev: Nameservers for the .arpa Domain
-docname: draft-iab-arpa-authoritative-servers-00
+docname: draft-iab-arpa-authoritative-servers-01
 
 stand_alone: true
 
@@ -71,8 +71,8 @@ nameservers apply to the operational requirements of the "arpa" servers". To
 date, this has been implemented by serving the "arpa" domain directly on
 a subset of the root server infrastructure.
 
-This bundling of root server and "arpa" server operations has entwined
-management of the zones contents and their infrastructure. As a result,
+This bundling of root nameserver and "arpa" nameserver operations has entwined
+management of the zones' contents and their infrastructure. As a result,
 some proposals under consideration by the IETF involving the "arpa" zone
 have been discarded due to the risk of conflict with operations associated
 with managing the content of the root zone, or administering the root
@@ -114,7 +114,7 @@ the scope of this document.
 Consistent with the use of the "arpa" namespace itself to host name
 servers for other delegations in the "arpa" zone ({{RFC5855}}), this
 document specifies a new namespace of "ns.arpa", with the
-nameserver set for the "arpa" zone to be labelled as follows:
+nameserver set for the "arpa" zone to be initially labelled as follows:
 
 ~~~~~
    a.ns.arpa
@@ -186,7 +186,9 @@ are minimized.
 The IANA shall coordinate the creation of the "ns.arpa" namespace and
 populate it with address records that reflect the IP addresses of the
 contemporary root servers documented within "root-servers.net" as its
-initial state.
+initial state. The namespace may either be provisioned directly within
+the "arpa" zone (as a non-empty terminal), or through establishing
+a dedicated "ns.arpa" zone, according to operational requirements.
 
 The IANA will initially migrate the 12 NS records for the "arpa" zone
 to point to their respective new entries in the "ns.arpa" domain.
