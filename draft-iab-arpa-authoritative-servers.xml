@@ -200,7 +200,7 @@ are minimized.</t>
 populate it with address records that reflect the IP addresses of the
 contemporary root servers documented within “root-servers.net” as its
 initial state. The namespace may either be provisioned directly within
-the “arpa” zone (as a non-empty terminal), or through establishing
+the “arpa” zone (as an empty non-terminal), or through establishing
 a dedicated “ns.arpa” zone, according to operational requirements.</t>
 
 <t>The IANA will initially migrate the 12 NS records for the “arpa” zone
@@ -303,7 +303,7 @@ Wessels and Suzanne Woolf for providing review and feedback.</t>
   </back>
 
 <!-- ##markdown-source:
-H4sIANdu7GAAA31ZXW8bNxZ9568glIdNFpLW8SbNVosF6sZJ47brGnGKAH1Z
+H4sIAGJy7GAAA31ZXW8bNxZ9568glIdNFpLW8SbNVosF6sZJ47brGnGKAH1Z
 UDOUxPWInJIcO0qR/e177iVnhiMrLVDEGnHI+3HOuZdXi8VCRBMbvZLXaq+D
 9vfaB7lxXsadlhd17XUIUtlavnddNHYrb5THyqi9vPBayacz5Vs1eyYv3V4Z
 K9R67fX96e2WtLRfWLvKYs1K1l5t4sKo9YK+Xqgu7pw3UUVzrxd5i8XZcyFC
@@ -365,18 +365,18 @@ ctaCNq6+J8FiQ9IIY7iXTIglHo2beFxpAjcMW2s+kwgwIqqd0XkAhK8DjfhH
 GiqBrhtXdp9g38d4nBrRXBeNNQKKItO3muQ/lVwbSPn6UQvhlZlOh/Nlk37P
 kK8nV5Z02+QvwA4IzNi/pgEL+rKJNPa9e9HS032sdW1HUgfSJ7BkUg0NU+6U
 Nw0wncZhZROYk8xjKjS7XvnDhIHloCB3bLPjrm9G/IfmiNwCpdimdnU0lkq3
-NnzBWesJ+oaeJB3wCCFPVT9GhokRvb/2dDVonvEQLe48YU5qnArGhR0RVw1X
-97qIXOqlUm3Oavu1OeyyyM9xm83tXcrS83NJPyTkUJ8aTtH8yRkbcyUyvmio
-uVPHad7o8aY3WJuHRAKM69ubfiJ+dfE9M2A0jzoX0JCfFkhKiOBeutH3wK7o
-OyIanJMRJh7SRKDu0kBgvHjhHcPtQEc9wMA9MRS1kyNjjsKJOXRq1kk9RN+k
-seWTuzmP7nBFMCdbJ/aO2SLWPFqln2gyMNlLGttWqdTUciR0YukeCaSBE/IR
-088OIjOWgjFMBR8NwKn9RydFgTpF4dB/eaL8m3RDLBuYdGSa1kP2hWIw9ETE
-5SAHZynfu3UXygHaOGjumV6Mj8WJaXNiT5oDDRqWszJoL/0Udvvm9TMi8QPu
-9SKReTrK6TFWDtt6rw7557O1qu4oWhfVnXUPja55sBTEH6v0g5Ku/zXbqCbo
-2ReKnLJ38uA6edEcsAtCS1Scy3+bakfTBTyI0dm5/Fn5sPjRYb38GVUGTz4i
-Fu8U2us7vCA+IBz0yYDaN6pr5Du32fC69x1k8J3rQqPBm19otk9BbXRY/IDq
-hWeXnQKeP5IUNumactt9VhaR+ehcs2Eoj1cH+gUThKVlG7Sh5C9cF/8HjEbc
-tVYgAAA=
+NnzBWesJ+oaeJB3wCCFPmSES9sUDT5Mh8HQ3aJ7xFC3uPIFOahwLyoUdMVcN
+d/e6CF1qplJxznL7tUHsskjQcZ/N/V1K0/NzSb8k5Fifmk7RAMoZG3MpMr7o
+qLlVx2ne6PGqN1ibp0QClOv7m34kfnXxPVNgNI9aF/CQnxZQSpDgZrrR9wCv
+6FsimpyTEehk0kig7tJEYLx54R3D/UBHTcBAPjFUtZMzY47CiUF06tZJPkTf
+pbHlk8s5z+5wRzAneyf2juki1jxbpd9oMjLZS5rbVqnW1HJkdKLpHgmkiRPy
+EdPvDiJTloIxjAUfTcCp/0crRYE6xeHQf3mi/pt0RSw7mHRkGtdD94ViMPRM
+xO0gB2cp37t1F8oJ2jhp7qlezI/FiXFzok8aBA0ilrMyiC/9Fnb75vUzYvED
+LvYisXk6y+kxVk7beq8O+feztaruKFoX1Z11D42uebIUxB+r9IuSrv8126gm
+6NkXipyyd/LgOnnRHLALQktUnMt/m2pH4wU8iNHZufxZ+bD40WG9/BllBk8+
+IhbvFPrrO7wgPiAc9MmA2jeqa+Q7t9nwuvcddPCd60KjwZtfaLhPQW10WPyA
+8oVnl50Cnj+SFjbpnnLbfVYWkfnoXLNhKI93B/oJE4SlZRv0oeQvXBf/BxBJ
+gaBXIAAA
 
 -->
 

@@ -236,7 +236,7 @@ Internet-Draft      Nameservers for the .arpa Domain           July 2021
    populate it with address records that reflect the IP addresses of the
    contemporary root servers documented within "root-servers.net" as its
    initial state.  The namespace may either be provisioned directly
-   within the "arpa" zone (as a non-empty terminal), or through
+   within the "arpa" zone (as an empty non-terminal), or through
    establishing a dedicated "ns.arpa" zone, according to operational
    requirements.
 

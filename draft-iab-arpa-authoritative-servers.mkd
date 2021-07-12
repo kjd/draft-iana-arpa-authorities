@@ -187,7 +187,7 @@ The IANA shall coordinate the creation of the "ns.arpa" namespace and
 populate it with address records that reflect the IP addresses of the
 contemporary root servers documented within "root-servers.net" as its
 initial state. The namespace may either be provisioned directly within
-the "arpa" zone (as a non-empty terminal), or through establishing
+the "arpa" zone (as an empty non-terminal), or through establishing
 a dedicated "ns.arpa" zone, according to operational requirements.
 
 The IANA will initially migrate the 12 NS records for the "arpa" zone
